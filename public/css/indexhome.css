@@ -79,8 +79,79 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 }
 
 
+.n-double{
+	color: black;
+	transition: 0.3s ease;
+}
+.n-double:hover{
+	color: #B8B7B7
+;	transition: 0.3s ease;
+}
+.n-student-for{
+	font-size: 15px;
+}
+.n-teacher-for{
+	padding-right: 162px;
+}
+.n-report-forfor{
+	padding-right: 178px;
+}
+.n-message-for{
+	padding-right: 160px;
+}
+.n-forstudents-icon{
+	font-size: 16px;
+	padding-left: 129px;
+	color: #6A6868
+
+}
+.n-forstudents-icon:hover{
+	color: #B8B7B7
+;
+}
+.n-forjs{
+	display: none;
+	padding-top: 20px;}
+.n-forjs a{
+	padding-right: 108px;
+	text-decoration: none;
+	color: #6A6868
+}
+.n-forjs a:hover{
+	color: black;}
+.n-forjs ul{
+	list-style: none;
+	padding-left: 75px;}
+.n-back-lop{
+	font-size: 16px;
+	padding-left: 127px;
+}
+.n-fomular{
+	padding-right: 150px;
+}
+
 /*end report*/
 /*all left right*/
+
+
+/*for hnin javascript*/
+.h-span{
+	margin-left: 200px;
+}
+#h-cross{
+	color: red!important;
+}
+/*for hnin javascript*/
+
+
+
+
+
+
+
+
+
+
 
 /*start attendance*/
 

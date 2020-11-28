@@ -2,7 +2,7 @@
 
 
 @extends('layouts.app')
-@section('title', 'Report Page')
+@section('title', 'Message Page')
 @section('content') 
   {{-- container-fluid --}}
 <div class="container-fluid" style="margin-top: 45px; border-top: 1px solid black;">
@@ -39,14 +39,33 @@
     {{-- end for teachers --}}  
 
       {{-- for students --}}  
-      <div class="row n-ruller">
-      <a href="{{route('student')}}" class="n-double" style="text-decoration: none;">
-        
-        <i class="fa fa-users n-papper" aria-hidden="true"></i>
+      {{-- for students --}}  
+      {{-- for students --}}
+      <div class="row n-ruller n-second-rullerjs" id="show">
+     {{-- second --}}
+      <a href="#" class="n-double" style="text-decoration: none;"> 
+          <i class="fa fa-users n-papper" aria-hidden="true"></i>
         <span class="n-student-for">Students</span>
-                  
+        <i class="fa fa-caret-down n-back-lop" aria-hidden="true"></i> 
       </a>
-      </div>
+      {{-- end second --}} 
+           {{-- hide --}}
+       <div class="n-forjs" id="hide">
+          <ul>
+            <li>
+              <a href="{{route('department-page')}}">Department</a>
+            </li>
+          </ul> 
+              <ul style="margin-bottom: 0px;">
+            <li>
+              <a href="{{route('section-page')}}" class="n-fomular" style="padding-right: 150px;">Class</a>
+            </li>
+          </ul>
+        </div>
+        {{--end hide --}}
+        </div>
+            {{-- end for students --}}
+            
     
     {{-- end for students --}}  
       {{-- for report --}}  

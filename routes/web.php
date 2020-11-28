@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,3 +29,37 @@ Route::get('/teacher', 'FirstController@teacher')->name('teacher');
 Route:: get('/student', 'FirstController@student')->name('student');
 
 Route::get('/message', 'FirstController@message')->name('message');
+
+/*departments create*/
+/*departments create*/
+Route::get('/department-page', 'FirstController@department')->name('department-page');
+
+Route::get('/department', 'DepartmentController@create')->name('department_create');
+
+Route::post('/department', 'DepartmentController@store')->name('department_store');
+
+Route::get('/department-edit/{id}', 'DepartmentController@edit')->name('department_edit');
+
+Route::post('/department-edit/{id}', 'DepartmentController@update')->name('department_update');
+
+Route::get('/department-delete/{id}', 'DepartmentController@destroy')->name('department-delete');
+/*departments create*/
+/*end departments create*/
+
+
+/*class create*/
+/*class create*/
+Route::get('/class-page', 'FirstController@section')->name('section-page');
+
+Route::get('/class', 'SectionController@create')->name('section_create');
+
+Route::post('/class', 'SectionController@store')->name('section_store');
+
+Route::get('/class-edit/{id}', 'SectionController@edit')->name('section_edit');
+
+Route::post('/class-edit/{id}', 'SectionController@update')->name('section_update');
+
+Route::get('/class-delete/{id}', 'SectionController@destroy')->name('section-delete');
+/*end class create*/
+/*end class create*/
+
