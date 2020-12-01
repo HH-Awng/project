@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\department;
 use App\section;
+use App\Teacher;
+use File;
 
 
 
@@ -53,6 +55,11 @@ class FirstController extends Controller
         return view('section.section', compact('sections'));
     }
 
+
+    public function teachteacher(){
+        $teachers = Teacher::all();
+        return view('teacher.teacher', compact('teachers'));
+    }
 
 
 

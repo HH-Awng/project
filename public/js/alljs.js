@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 		//Hide displaye paragraphs
 		$('#h-cross').click(function(){
-			$('#h-alert').hide();
+			$('#h-alert').hide("slow");
 		});
 
 

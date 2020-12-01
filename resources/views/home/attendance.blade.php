@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-@section('title', 'Report Page')
+@section('title', 'Attendance Page')
 @section('content') 
   {{-- container-fluid --}}
 <div class="container-fluid" style="margin-top: 45px; border-top: 1px solid black;">
@@ -20,6 +20,7 @@
         
         <i class="fa fa-bar-chart n-papper" aria-hidden="true"></i>
                 <span class="n-attendance-for">Attendance</span>
+               
           
         
       </a>
@@ -91,6 +92,9 @@
 
       {{-- column 9 --}}
     <div class="col-sm-9">
+
+       <span><a href="{{route('teacher-page')}}">teacher</a></span>
+
       {{-- learn and play --}}
       <div class="n-learn-play">
         <a href="#" class="n-play" style="text-decoration: none;">

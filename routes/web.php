@@ -63,3 +63,23 @@ Route::get('/class-delete/{id}', 'SectionController@destroy')->name('section-del
 /*end class create*/
 /*end class create*/
 
+
+/*teacher create*/
+/*teacher create*/
+Route::get('/teacher-page', 'FirstController@teachteacher')->name('teacher-page');
+
+Route::get('/teacher-create', 'TeacherController@create')->name('teacher_create');
+
+Route::post('/teacher-store', 'TeacherController@store')->name('teacher_store');
+
+Route::get('/teacher-edit/{id}', 'TeacherController@edit')->name('teacher_edit');
+
+/*Route::post('/teacher-edit/{id}', 'TeacherController@update')->name('teacher_update');
+*/
+
+Route::post('/teacher-edit/{id}', 'TeacherController@update')->name('teacher_update');
+
+Route::get('/teacher-delete/{id}', 'TeacherController@destroy')->name('teacher-delete');
+/*end teacher create*/
+/*end teacher create*/
+

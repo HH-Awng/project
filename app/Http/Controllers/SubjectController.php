@@ -4,28 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Department;
 
-
-
-class DepartmentController extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-     public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
-    
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -34,12 +23,8 @@ class DepartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-
-        $departments = Department::all();
-
-        return view('department.department', compact('departments'));
-
+    {
+        //
     }
 
     /**
@@ -50,18 +35,7 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-        'department_name'=>'string|required',
-        ]);
-
-        $name= $request->department_name;
-        $department= new Department;
-        $department->name=$name;
-        $department->save();
-
-        return redirect()->back();
-
-
+        //
     }
 
     /**
@@ -72,7 +46,7 @@ class DepartmentController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -83,9 +57,7 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        $departments= Department::findOrFail($id);
-        return view('department.department_edit', compact('departments'));
-
+        //
     }
 
     /**
@@ -97,15 +69,7 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'department_name'=>'string|required|max:50|min:3',
-        ]);
-        $name= $request->department_name;
-        $department= Department::find($id);
-        $department->name= $name;
-        $department->save();
-        return redirect()->back()->with('success', 'Record updated successfully');
-
+        //
     }
 
     /**
@@ -116,19 +80,6 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        if(Department::where('id', $id)->delete()){
-            return redirect()->back()->with('success', 'Record deleted successfully');
-        }else{
-            return redirect();
-        }
+        //
     }
-
-
-
-
-
-
-
-
-
 }
