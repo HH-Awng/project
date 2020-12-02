@@ -2,7 +2,7 @@
 
 
 @extends('layouts.app')
-@section('title', 'Section category')
+@section('title', 'Students_section category')
 @section('content')
 
 	{{-- container --}}

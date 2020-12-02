@@ -1,7 +1,7 @@
 
 
 @extends('layouts.app')
-@section('title', 'class | edit')
+@section('title', 'students_section | edit')
 @section('content')
 	{{-- container --}}
 <div class="container">

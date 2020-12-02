@@ -37,6 +37,9 @@
     
     {{-- end for teachers --}}  
 
+
+
+
       {{-- for students --}}  
       {{-- for students --}}  
       {{-- for students --}}
@@ -94,6 +97,9 @@
     <div class="col-sm-9">
 
        <span><a href="{{route('teacher-page')}}">teacher</a></span>
+
+       <span><a href="{{route('subject')}}" class="btn btn-primary">subject</a></span>
+       <span><a href="{{route('student-create')}}" class="btn btn-success">student</a></span>
 
       {{-- learn and play --}}
       <div class="n-learn-play">

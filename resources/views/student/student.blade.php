@@ -28,16 +28,16 @@
 
 
 						{{-- form --}}
-						<form action="{{route('teacher_store')}}" method="POST"
+						<form action="{{route('student_store')}}" method="POST"
 						enctype="multipart/form-data">
 							@csrf
 
 							{{-- form control --}}
 							<div class="form-group">
 						<label for="exampleInputPassword1">Name</label>
-						<input type="text" class="form-control" name="teachername" 
-						value="{{old('teachername')}}">
-						@error('teachername')
+						<input type="text" class="form-control" name="studentname" 
+						value="{{old('studentname')}}">
+						@error('studentname')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
 							
@@ -48,9 +48,9 @@
 						{{-- form control --}}
 							<div class="form-group">
 						<label for="exampleInputPassword1">Age</label>
-						<input type="text" class="form-control" name="teacherage"
-						value="{{old('teacherage')}}">
-						@error('teacherage')
+						<input type="text" class="form-control" name="studentage"
+						value="{{old('studentage')}}">
+						@error('studentage')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
 							
@@ -61,9 +61,9 @@
 						{{-- form control --}}
 							<div class="form-group">
 						<label for="exampleInputPassword1">Rank</label>
-						<input type="text" class="form-control" name="teacherrank"
-						value="{{old('teacherrank')}}">
-						@error('teacherrank')
+						<input type="text" class="form-control" name="studentrank"
+						value="{{old('studentrank')}}">
+						@error('studentrank')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
 							
@@ -73,9 +73,9 @@
 						{{-- form control --}}
 							<div class="form-group">
 						<label for="exampleInputPassword1">Register_No</label>
-						<input type="text" class="form-control" name="registerno"
-						value="{{old('registerno')}}">
-						@error('registerno')
+						<input type="text" class="form-control" name="studentreg_no"
+						value="{{old('studentreg_no')}}">
+						@error('studentreg_no')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
 							
@@ -87,24 +87,64 @@
 						<label for="exampleInputPassword1">Gender</label>
 						{{-- <input type="radio" class="form-control" name="teachgender"
 						value="male" checked> --}}
-						<input type="radio" name="teachgender" value="male" checked>Male
-						<input type="radio" name="teachgender" value="female">Female
+						<input type="radio" name="studentgender" value="male" checked>Male
+						<input type="radio" name="studentgender" value="female">Female
 						{{-- <input type="radio" class="form-control" name="teachgender"
 						value="female"> --}}
-						@error('registerno')
-						<p style="color:red;">{{$message}}</p>
-						@enderror
+						
 							
 							</div>
 						{{-- form control --}}
 
 
+						{{-- section --}}
+						<div class="form-group">
+							  <label for="exampleInputEmail1">Class</label>
+
+							  <select class="form-control" name="section_id">
+
+							  	@foreach($sections as $section)
+							  	<option value="{{$section->id}}"
+							  	{{($section->id==old('section_id')?'selected':null)}}>
+							  	
+							  	{{$section->class_name}}	
+							  	</option>
+							  	@endforeach
+							  </select>
+							  		
+						</div>
+						{{-- end section --}}
+
+
+
+						{{-- department --}}
+						<div class="form-group">
+							  <label for="exampleInputEmail1">Department</label>
+
+							  <select class="form-control" name="Dep_id">
+
+							  	@foreach($departments as $department)
+							  	<option value="{{$department->id}}"
+							  	{{($department->id==old('Dep_id')?'selected':null)}}>
+							  	
+							  	{{$department->name}}	
+							  	</option>
+							  	@endforeach
+							  </select>
+							  		
+						</div>
+						{{-- end department --}}
+
+
+
+
+
 						{{-- form control --}}
 							<div class="form-group">
 						<label for="exampleInputPassword1">Image</label>
-						<input type="file" class="form-control" name="teachimage"
-						value="{{old('teachimage')}}">
-						@error('teachimage')
+						<input type="file" class="form-control" name="stuentimage"
+						value="{{old('stuentimage')}}">
+						@error('stuentimage')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
 							
@@ -138,34 +178,40 @@
 					{{-- thead --}}
 					<thead>
 						<tr>
-						<th>No</th><th>Name</th><th>Date</th><th>Age</th><th>Rank</th><th>Reg-No</th><th>Gender</th><th>image</th><th>Action</th>
+						<th>No</th><th>Name</th><th>Date</th><th>Age</th><th>Rank</th><th>Reg-No</th><th>Gender</th><th>Class</th><th>Department</th><th>image</th><th>Action</th>
 					</tr>
 					</thead>
 					{{-- thead --}}
 
 					{{-- tbody --}}
-					@foreach($teachers as $key=>$teacher)
+					@foreach($students as $key=>$student)
 					<tbody>						
 						<tr>
-								<td>{{++$key}}</td><td>{{$teacher->name}}</td>
-								<td>{{$teacher->created_at}}</td>
-							<td>{{$teacher->age}}</td>
-							<td>{{$teacher->rank}}</td>
-							<td>{{$teacher->Reg_No}}</td>
-							<td>{{$teacher->gender}}</td>
-							<td>
+								<td>{{++$key}}</td><td>{{$student->name}}</td>
+								<td>{{$student->created_at}}</td>
+							<td>{{$student->age}}</td>
+							<td>{{$student->rank}}</td>
+							<td>{{$student->Reg_No}}</td>
+							<td>{{$student->gender}}</td>
+							
+							<td>{{$student->section->class_name}}</td>
+							<td>{{$student->department->name}}</td>
+
+
+
+							{{-- <td>
 							@if(isset($teacher->image))
-							<img src="{{asset('/storage/imagestore/'.$teacher->image)}}" class="img-thumbnail"
+							<img src="{{asset('/storage/imagestore/'.$student->image)}}" class="img-thumbnail"
 							style="border-radius:0px; width:100px; height:auto;">
 							@endif	
-							</td>
+							</td> --}}
 
 							
 
-							<td><a href="{{route('teacher_edit', $teacher->id)}}" style="color: red;">Edit</a></td>
+							{{-- <td><a href="#" style="color: red;">Edit</a></td>
 							<td>
-							<a href="{{route('teacher-delete', $teacher->id)}}" style="color: red;" onclick="return confirm('Are you sure to delete?')">Delete</a>
-							</td>
+							<a href="#" style="color: red;" onclick="return confirm('Are you sure to delete?')">Delete</a>
+							</td> --}}
 							
 						</tr>
 					</tbody>

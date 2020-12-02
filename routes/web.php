@@ -28,6 +28,8 @@ Route::get('/teacher', 'FirstController@teacher')->name('teacher');
 
 Route:: get('/student', 'FirstController@student')->name('student');
 
+Route:: get('/subject', 'FirstController@subject')->name('subject');
+
 Route::get('/message', 'FirstController@message')->name('message');
 
 /*departments create*/
@@ -74,12 +76,71 @@ Route::post('/teacher-store', 'TeacherController@store')->name('teacher_store');
 
 Route::get('/teacher-edit/{id}', 'TeacherController@edit')->name('teacher_edit');
 
-/*Route::post('/teacher-edit/{id}', 'TeacherController@update')->name('teacher_update');
-*/
-
 Route::post('/teacher-edit/{id}', 'TeacherController@update')->name('teacher_update');
 
 Route::get('/teacher-delete/{id}', 'TeacherController@destroy')->name('teacher-delete');
 /*end teacher create*/
 /*end teacher create*/
+
+
+
+/*subject create*/
+/*subject create*/
+
+
+Route:: get('/subject', 'FirstController@subject')->name('subject');
+
+Route::post('/subject-store', 'SubjectController@store')->name('subject_store');
+
+Route::get('/subject-edit/{id}', 'SubjectController@edit')->name('subject__edit');
+
+Route::post('/subject-edit/{id}', 'SubjectController@update')->name('subject_update');
+
+Route::get('/subject-delete/{id}', 'SubjectController@destroy')->name('subject-delete');
+/*end subject create*/
+/*end subject create*/
+
+
+
+
+/*subject create*/
+/*subject create*/
+
+
+Route:: get('/student', 'StudentController@create')->name('student-create');
+
+Route::post('/student-store', 'StudentController@store')->name('student_store');
+
+Route::get('/student-edit/{id}', 'StudentController@edit')->name('student__edit');
+
+Route::post('/student-edit/{id}', 'StudentController@update')->name('student_update');
+
+Route::get('/student-delete/{id}', 'StudentController@destroy')->name('student-delete');
+/*end subject create*/
+/*end subject create*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Start UI design*/
+
+
+
+
+
+/*End UI design*/
+
+
 

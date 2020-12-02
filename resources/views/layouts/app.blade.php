@@ -36,7 +36,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-new">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-new sticky-top">
             <div class="container-fluid">
                 <img src="{{asset('/upload/logo.png')}}">
 

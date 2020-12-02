@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\department;
 use App\section;
 use App\Teacher;
+use App\Subject;
 use File;
 
 
@@ -32,10 +33,16 @@ class FirstController extends Controller
 
 
     public function teacher(){
-    	return view('home.teacher');
+
+         $teachers=Teacher::all();
+        $subjects = Subject::all();
+        $sections=Section::all();
+    	return view('home.teacher', compact('teachers', 'subjects', 'sections'));
     }
 
     public function student(){
+
+        
     	return view('home.student');
     }
 
@@ -45,7 +52,9 @@ class FirstController extends Controller
 
 
     public function department(){
-        $departments= Department::all();
+
+       
+        $departments= department::all();
         return view('department.department', compact('departments'));
     }
 
@@ -60,6 +69,21 @@ class FirstController extends Controller
         $teachers = Teacher::all();
         return view('teacher.teacher', compact('teachers'));
     }
+
+
+
+    public function subject(){
+        
+
+        $teachers=Teacher::all();
+        $subjects = Subject::all();
+        $sections=Section::all();
+        return view('subject.subject', compact('teachers', 'subjects', 'sections'));
+    }
+
+
+
+
 
 
 

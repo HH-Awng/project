@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Teacher;
-use App\Subject;
+use App\Student;
+use File;
+use App\department;
 use App\Section;
 
-class SubjectController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +18,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -27,7 +28,10 @@ class SubjectController extends Controller
      */
     public function create()
     {
-       
+        $departments=department::all();
+        $sections=Section::all();
+        $students=Student::all();
+        return view('student.student', compact('students', 'departments', 'sections'));
     }
 
     /**
@@ -39,23 +43,38 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-        'subname'=>'string|required',
-        'teach_id'=>'string|required',
+        'studentname'=>'string|required',
+        'studentage'=>'required|max:20|min:2',
+        'studentrank'=>'required|string',
+        'studentreg_no'=>'required|string',
+        'studentgender'=>'required|string',
+        'stuentimage'=>'image|mimes:jpg,png,jpeg|max:5000',
+        'Dep_id'=>'string|required',
         'section_id'=>'string|required'
         
         ]);
 
-        $name= $request->subname;
-        $teach=$request->teach_id;
-        $section=$request->section_id;
+        $stuname= $request->studentname;
+        $stuage=$request->studentage;
+        $sturank=$request->studentrank;
+        $stureg=$request->studentreg_no;
+        $stugender=$request->studentgender;
+        $stuimage=$request->stuentimage;
+        $Depid=$request->Dep_id;
+        $sectionid=$request->section_id;
+
         
 
-        $subjects= new Subject;
-        $subjects->subname=$name;
-      
-        $subjects->teacher_id = $teach;
-        $subjects->section_id = $section;
-        $subjects->save();
+        $student= new Student;
+        $student->name=$stuname;
+        $student->age=$stuage;
+        $student->rank=$sturank;
+        $student->Reg_No=$stureg;
+        $student->gender=$stugender;
+        $student->image=$stuimage;
+        $student->Dep_id= $Depid;
+        $student->section_id = $sectionid;
+        $student->save();
 
         return redirect()->back();
     }
@@ -79,10 +98,7 @@ class SubjectController extends Controller
      */
     public function edit($id)
     {
-       $teachers=Teacher::all();
-       $sections=Section::all();
-        $subject= Subject::findOrFail($id);
-        return view('subject.subjectforedit', compact('subject', 'teachers', 'sections'));
+        //
     }
 
     /**
@@ -94,22 +110,7 @@ class SubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'subname'=>'string|required',
-            'teach_id'=>'string|required',
-            'section_id'=>'string|required'
-        ]);
-            $name= $request->subname;
-            $teach=$request->teach_id;
-            $section=$request->section_id;
-
-        $subjects= Subject::findOrFail($id);
-        $subjects->subname=$name;
-        $subjects->teacher_id = $teach;
-        $subjects->section_id = $section;
-        $subjects->save();
-
-        return redirect()->back()->with('success', 'Record updated successfully');
+        //
     }
 
     /**
@@ -120,17 +121,6 @@ class SubjectController extends Controller
      */
     public function destroy($id)
     {
-        
-
-
-            if(Subject::where('id', $id)->delete()){
-            return redirect()->back()->with('success', 'Record deleted successfully');
-        }else{
-            return redirect();
-        }
-
-
-
-
+        //
     }
 }

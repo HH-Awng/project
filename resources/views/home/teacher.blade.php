@@ -123,7 +123,91 @@
         </a>
         
       </div>
-      {{-- end learn and play --}}    
+      {{-- end learn and play --}}  
+
+
+
+
+
+          {{-- UI design --}}
+          <div class="container">
+
+
+
+             @foreach($subjects as $key=>$subject)
+            {{-- row --}}
+            <div class="row">
+              {{-- col-sm-3 --}}
+              <div class="col-sm-3 n-loop-margin">
+                  
+         
+                  
+            
+               {{--  <td>{{++$key}}</td>
+                <td>{{$subject->subname}}</td>
+                <td>{{$subject->created_at}}</td>
+                <td>{{$subject->teacher->name}}</td>
+                <td>{{$subject->section->class_name}}</td> --}}
+
+
+             {{--  for image --}}
+             <div class="n-for_imageloop">
+               <img src="{{asset('/storage/imagestore/'.$subject->teacher->image)}}" class="n-imagemap border border-ligh">
+             </div>
+              
+             {{--  end for image --}}
+                  
+
+
+          
+          
+
+
+
+              </div>
+              {{-- col-sm-3 --}}
+
+
+
+              {{-- col-sm-9 --}}
+                <div class="col-sm-9">
+                  <tbody>
+                    <tr>
+                      <td>{{$subject->teacher->name}}</td>
+                    </tr>
+                  </tbody>
+                </div>
+
+              {{-- end col-sm-9 --}}
+
+
+
+
+
+
+            </div>
+            {{-- end row --}}
+            @endforeach
+
+
+
+
+          </div>
+          {{-- end UI design --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     {{-- end column 9 --}}  

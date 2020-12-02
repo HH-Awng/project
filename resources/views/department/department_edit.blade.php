@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-@section('title', 'department | edit')
+@section('title', 'studentsdepartment | edit')
 @section('content')
 	{{-- container --}}
 <div class="container">
