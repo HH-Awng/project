@@ -9,12 +9,16 @@ class Teacher extends Model
 {
 
     public function subjects(){
-    	return $this->hasMany('App\Subject')->withDefault();
+    	return $this->hasMany('App\Subject');
 	}
 
 
-	
 
+	 public function sections(){
+    	return $this->hasMany('App\Section');
+	}
+
+	
 
 
 }

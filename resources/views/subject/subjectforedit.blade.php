@@ -23,7 +23,7 @@
 
 
 						{{-- form --}}
-						<form action="" method="POST">
+						<form action="{{route('subject_update', $subject->id)}}" method="POST">
 							@csrf
 
 							{{-- form control --}}

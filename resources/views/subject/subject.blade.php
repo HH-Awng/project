@@ -8,7 +8,6 @@
 	{{-- container --}}
 	<div class="container">
 
-		<a href="{{route('attendance')}}" class="btn btn-primary">Back</a>
 		{{-- row --}}
 		<div class="row justify-content-center">			
 			{{-- columns --}}
@@ -27,7 +26,7 @@
 
 
 						{{-- form --}}
-						<form action="{{route('subject_store')}}" method="POST">
+						<form action="{{route('subject_store')}}" method="POST" multiple>
 							@csrf
 
 							{{-- form control --}}
@@ -47,6 +46,7 @@
 						<div class="form-group">
 							  <label for="exampleInputEmail1">Teacher</label>
 							  <select class="form-control" name="teach_id">
+							  	<option disabled selected >-----------------------</option>
 							  	@foreach($teachers as $teacher)
 							  	<option value="{{$teacher->id}}"
 							  	{{($teacher->id==old('name')?'selected':null)}}  >
@@ -65,7 +65,9 @@
 						<div class="form-group">
 							  <label for="exampleInputEmail1">Class</label>
 
-							  <select class="form-control" name="section_id">
+							  <select class="form-control" name="section_id" multiple>
+
+							  	<option disabled selected >-----------------------</option>
 
 							  	@foreach($sections as $section)
 							  	<option value="{{$section->id}}"

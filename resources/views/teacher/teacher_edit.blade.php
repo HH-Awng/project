@@ -1,8 +1,17 @@
 
 
 @extends('layouts.app')
-@section('title', 'Teacher category')
+@section('title', 'Teacher_edit Page')
 @section('content')
+
+
+
+{{-- report --}}
+    <div class="report">  
+      <h3 class="n-report-z n-teacheredit-h">Teacher Edit</h3>
+      
+    </div>
+    {{-- end report --}}
 
 	{{-- container --}}
 	<div class="container">
@@ -116,6 +125,7 @@
 
 
 						<button class="btn btn-success" type="submit">Update</button>
+						<a href="{{route('student-create')}}" class="btn btn-danger">Cancle</a>
 							
 						</form>
 						{{-- form --}}

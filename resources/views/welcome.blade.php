@@ -20,8 +20,7 @@
                     </div>
                     {{-- end wel-user --}}
 
-           
-                
+                           
 
                 
                 <div class="links">
@@ -35,7 +34,7 @@
                          <a class="n-forlogin" href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            {{-- <a href="{{ route('register') }}">Register</a> --}}
+                           {{--  <a href="{{ route('register') }}">Register</a> --}}
                         @endif
                     @endauth
                 </div>

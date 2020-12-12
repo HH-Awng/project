@@ -2,24 +2,32 @@
 
 
 @extends('layouts.app')
-@section('title', 'Teacher category')
+@section('title', 'Student_edit Page')
 @section('content')
 
-	
-
 	 
+{{-- report --}}
+    <div class="report">  
+      <h3 class="n-report-z n-stu_edit-h">Student Edit</h3>
+      
+    </div>
+    {{-- end report --}}
 
 
 
 
-      	{{-- container --}}
+
+	{{-- container --}}
 	<div class="container">
 		{{-- row --}}
 		<div class="row justify-content-center h-form-row">			
 			{{-- columns --}}
 			<div class="col-md-8">
 
-				{{-- <a href="{{route('attendance')}}" class="btn btn-primary">Back</a> --}}
+			
+
+
+
 
 				{{-- card --}}
 				<div class="card">
@@ -35,14 +43,15 @@
 
 
 						{{-- form --}}
-						<form action="{{route('student_store')}}" method="POST" enctype="multipart/form-data">
+						<form action="{{route('student_update', $student->id)}}" method="POST"
+						enctype="multipart/form-data">
 							@csrf
 
 							{{-- form control --}}
 							<div class="form-group">
-						{{-- <label for="exampleInputPassword1">Name</label> --}}
+						<label for="exampleInputPassword1">Name</label>
 						<input type="text" class="form-control" name="studentname" placeholder="Name" 
-						value="{{old('studentname')}}">
+						value="{{$student->name}}">
 						@error('studentname')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
@@ -53,9 +62,9 @@
 
 						{{-- form control --}}
 							<div class="form-group">
-						{{-- <label for="exampleInputPassword1">Age</label> --}}
+						<label for="exampleInputPassword1">Age</label>
 						<input type="text" class="form-control" name="studentage" placeholder="Age" 
-						value="{{old('studentage')}}">
+						value="{{$student->age}}">
 						@error('studentage')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
@@ -66,9 +75,9 @@
 
 						{{-- form control --}}
 							<div class="form-group">
-						{{-- <label for="exampleInputPassword1">Rank</label> --}}
+						<label for="exampleInputPassword1">Rank</label>
 						<input type="text" class="form-control" name="studentrank" placeholder="Rank" 
-						value="{{old('studentrank')}}">
+						value="{{$student->rank}}">
 						@error('studentrank')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
@@ -78,9 +87,9 @@
 
 						{{-- form control --}}
 							<div class="form-group">
-						{{-- <label for="exampleInputPassword1">Register_No</label> --}}
+						<label for="exampleInputPassword1">Register_No</label>
 						<input type="text" class="form-control" name="studentreg_no" placeholder="Register_No" 
-						value="{{old('studentreg_no')}}">
+						value="{{$student->Reg_No}}">
 						@error('studentreg_no')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
@@ -93,8 +102,10 @@
 						<label for="exampleInputPassword1">Gender</label>
 						{{-- <input type="radio" class="form-control" name="teachgender"
 						value="male" checked> --}}
-						<input type="radio" name="studentgender" value="male" checked>Male
-						<input type="radio" name="studentgender" value="female">Female
+						<input type="radio" name="studentgender" value="male" @if ($student->gender=="male") checked @endif>Male
+						 
+
+						<input type="radio" name="studentgender" value="female" @if ($student->gender=="female") checked @endif>Female
 						{{-- <input type="radio" class="form-control" name="teachgender"
 						value="female"> --}}
 						
@@ -109,11 +120,9 @@
 
 							  <select class="form-control" name="section_id">
 
-							  	<option disabled selected >-----------------------</option>
-
 							  	@foreach($sections as $section)
 							  	<option value="{{$section->id}}"
-							  	{{($section->id==old('section_id')?'selected':null)}}>
+							  	{{($section->id==$student->section->id?'selected':null)}}>
 							  	
 							  	{{$section->class_name}}	
 							  	</option>
@@ -131,11 +140,9 @@
 
 							  <select class="form-control" name="department_id">
 
-							  	<option disabled selected >-----------------------</option>
-
 							  	@foreach($departments as $department)
 							  	<option value="{{$department->id}}"
-							  	{{($department->id==old('department_id')?'selected':null)}}>
+							  	{{($department->id==$student->department->id?'selected':null)}}>
 							  	
 							  	{{$department->name}}	
 							  	</option>
@@ -147,7 +154,7 @@
 
 
 
-						{{-- department --}}
+						{{-- subject --}}
 						<div class="form-group">
 							  <label for="exampleInputEmail1">Subject</label>
 
@@ -157,7 +164,7 @@
 
 							  	@foreach($subjects as $subject)
 							  	<option value="{{$subject->id}}"
-							  	{{($subject->id==old('subject_id')?'selected':null)}}>
+							  	{{($subject->id==$student->subject->id?'selected':null)}}>
 							  	
 							  	{{$subject->subname}}	
 							  	</option>
@@ -165,7 +172,7 @@
 							  </select>
 							  		
 						</div>
-						{{-- end department --}}
+						{{-- end subject --}}
 
 
 
@@ -174,7 +181,7 @@
 						{{-- form control --}}
 							<div class="form-group">
 						<label for="exampleInputPassword1">Image</label>
-						<input type="file" class="form-control" name="studentimage">
+						<input type="file" class="form-control" name="studentimage" multiple>
 						@error('studentimage')
 						<p style="color:red;">{{$message}}</p>
 						@enderror
@@ -184,7 +191,7 @@
 
 
 
-						<button class="btn btn-success" type="submit">Create</button>
+						<button class="btn btn-success" type="submit">Update</button>
 							
 						</form>
 						{{-- form --}}
@@ -200,57 +207,7 @@
 
 
 
-	{{-- row --}}
-	<div class="row justify-content-center">
-		{{-- columns --}}
-		<div class="col-sm-12">
-			{{-- table --}}
-				<table class="table table-hover">
-					{{-- thead --}}
-					<thead>
-						<tr>
-						<th>No</th><th>Name</th><th>Date</th><th>Age</th><th>Rank</th><th>Reg-No</th><th>Gender</th><th>Class</th><th>Department</th><th>Subject</th><th>image</th><th>Action</th>
-					</tr>
-					</thead>
-					{{-- thead --}}
-
-					{{-- tbody --}}
-					@foreach($students as $key=>$student)
-					<tbody>						
-						<tr>
-							<td>{{++$key}}</td><td>{{$student->name}}</td>
-							<td>{{$student->created_at}}</td>
-							<td>{{$student->age}}</td>
-							<td>{{$student->rank}}</td>
-							<td>{{$student->Reg_No}}</td>
-							<td>{{$student->gender}}</td>
-							
-							<td>{{$student->section->class_name}}</td>
-							<td>{{$student->department->name}}</td>
-							<td>{{$student->subject->subname}}</td>
-							<td>
-							@if(isset($student->image))
-							<img src="{{asset('/storage/imagestore/'.$student->image)}}" class="img-thumbnail"
-							style="border-radius:0px; width:100px; height:auto;">
-							@endif
-							</td>
-							
-
-							<td><a href="{{route('student_edit', $student->id)}}" style="color: red;">Edit</a></td>
-							<td>
-							<a href="{{route('student-delete', $student->id)}}" style="color: red;" onclick="return confirm('Are you sure to delete?')">Delete</a>
-							</td>
-							
-						</tr>
-					</tbody>
-					@endforeach
-					{{-- tbody --}}
-				</table>
-				{{-- table --}}
-		</div>
-		{{-- end columns --}}
-	</div>
-	{{-- end row --}}
+	
 
 
 	</div>
@@ -262,23 +219,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
+   
 
 
 

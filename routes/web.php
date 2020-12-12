@@ -26,7 +26,7 @@ Route::get('/attendance', 'FirstController@attendance')->name('attendance');
 
 Route::get('/teacher', 'FirstController@teacher')->name('teacher');
 
-Route:: get('/student', 'FirstController@student')->name('student');
+/*Route:: get('/student', 'FirstController@student')->name('student');*/
 
 Route:: get('/subject', 'FirstController@subject')->name('subject');
 
@@ -107,11 +107,11 @@ Route::get('/subject-delete/{id}', 'SubjectController@destroy')->name('subject-d
 /*subject create*/
 
 
-Route:: get('/student', 'StudentController@create')->name('student-create');
+Route:: get('/student-create', 'StudentController@create')->name('student-create');
 
 Route::post('/student-store', 'StudentController@store')->name('student_store');
 
-Route::get('/student-edit/{id}', 'StudentController@edit')->name('student__edit');
+Route::get('/student-edit/{id}', 'StudentController@edit')->name('student_edit');
 
 Route::post('/student-edit/{id}', 'StudentController@update')->name('student_update');
 
@@ -121,26 +121,62 @@ Route::get('/student-delete/{id}', 'StudentController@destroy')->name('student-d
 
 
 
+/*start forstudent*/
+
+Route::get('/forstudent', 'FirstController@forstudent')->name('onlyforstudentpage');
+
+
+/*end start forstudent*/
+
+
+
+/*student_department*/
+Route::get('/student_department', 'FirstController@student_department')->name('stu_department');
+/*end student_department*/
+
+
+/*One Student*/
+Route::get('/onestudentclass/{id}', 'FirstController@oneclass_student')->name('onestudentclass');
+
+/*End One Student*/
 
 
 
 
+/*One teacher*/
+
+	Route::get('/one-teacher/{id}', 'FirstController@oneteacher')->name('one_teacher');
+
+/*end one teacher*/
+
+
+
+/*user interface Class*/
+ Route::get('/student-class', 'FirstController@studentclass')->name('interfaceclass');
+
+/*End user interface Class*/
+
+
+
+/*student department personal data*/
+Route::get('/studepmentpersoanl/{id}', 'FirstController@studentdepartmentdata')->name('studentdepdata');
+
+
+/*end student department personal data*/
 
 
 
 
+/* Attdane Form*/
+Route::post('/attdanceform', 'AttdanceController@store')->name('attdanceform');
+Route::get('/showattdance', 'AttdanceController@show')->name('attdanceshow');
+Route::get('/boolean/{id}', 'StudentController@leaveout')->name('leaveoutstudent');
+/*Attdance Form*/
 
 
 
+/*Leave out*/
 
+Route::get('/leftoutstudnet', 'FirstController@leavestudent')->name('leavestudentpage');
 
-/*Start UI design*/
-
-
-
-
-
-/*End UI design*/
-
-
-
+/*Leave out*/

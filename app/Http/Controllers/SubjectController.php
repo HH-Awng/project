@@ -40,8 +40,8 @@ class SubjectController extends Controller
     {
         $request->validate([
         'subname'=>'string|required',
-        'teach_id'=>'string|required',
-        'section_id'=>'string|required'
+        'teach_id'=>'nullable|string|required',
+        'section_id'=>'nullable|string|required'
         
         ]);
 
@@ -81,7 +81,7 @@ class SubjectController extends Controller
     {
        $teachers=Teacher::all();
        $sections=Section::all();
-        $subject= Subject::findOrFail($id);
+       $subject= Subject::findOrFail($id);
         return view('subject.subjectforedit', compact('subject', 'teachers', 'sections'));
     }
 

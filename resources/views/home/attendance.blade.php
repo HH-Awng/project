@@ -1,138 +1,86 @@
 
+
+
 @extends('layouts.app')
 @section('title', 'Attendance Page')
 @section('content') 
-  {{-- container-fluid --}}
-<div class="container-fluid" style="margin-top: 45px; border-top: 1px solid black;">
-  {{-- row --}}
-  <div class="row">
-    {{-- column 3 --}}
-    <div class="col-sm-2 n-vartical">
-    {{-- report --}}
+  
+
+  {{-- report --}}
     <div class="report">  
-      <h3 class="n-report-z h-attendance">Attendance</h3>
+      <h3 class="n-report-z n-attendance-h">Attendance</h3>
       
     </div>
     {{-- end report --}}
-      {{-- for attendance --}}
-    <div class="row n-ruller">
-      <a href="{{route('attendance')}}" class="n-double" style="text-decoration: none;">
-        
-        <i class="fa fa-bar-chart n-papper" aria-hidden="true"></i>
-                <span class="n-attendance-for">Attendance</span>
-               
-          
-        
-      </a>
-          </div>
-    {{-- end for attendance --}}  
-      {{-- for teachers --}}  
-        <div class="row n-ruller">
-      <a href="{{route('teacher')}}" class="n-double" style="text-decoration: none;">
-        <i class="fa fa-suitcase n-papper" aria-hidden="true"></i>
-        
-      <span class="n-attendance-for n-teacher-for">Teachers</span>  
-      </a>
-        </div>
-    
-    {{-- end for teachers --}}  
 
 
+    {{-- Attendance List --}}
+    <div class="container">
+    	
+    	<div class="row">
+    		
+    		{{-- table --}}
+    		<table border="1" cellpadding="8" cellspacing="5">
+
+    			<th>Today:Attdance List <br>
+    			ATT</th>
+
+    			{{-- first tr --}}
+    			<tr>
+    				
+    				<th class="h-td-padd">Student</th>
+    				<th class="h-td-present">Present</th>
+    				<th class="h-td-present">Absent</th>
+    				@foreach($attdances as $key=>$attdance)
+    				 <th>
+    				 	
+    				 			{{-- <td scope="row" style="padding-top: 50px;">{{++$key}}.</td>
+                                <td><img src="{{asset('/storage/imagestore/'.$student->image)}}" class="n-loopimagefirst"></td>
+                                <td style="padding-top: 50px;">{{$student->name}}</td>
+                                <td style="padding-top: 50px;">{{$student->age}}</td>
+                                <td style="padding-top: 50px;">{{$student->rank}}</td>
+                                <td style="padding-top: 50px;">{{$student->Reg_No}}</td>
+                                <td style="padding-top: 50px;">{{$student->gender}}</td>
+                                <td style="padding-top: 50px;">{{$student->department->name}}</td>
+                                <td style="padding-top: 50px;">{{$student->subject->subname}}</td> --}}
+    				 </th>
 
 
-      {{-- for students --}}  
-      {{-- for students --}}  
-      {{-- for students --}}
-      <div class="row n-ruller n-second-rullerjs" id="show">
-     {{-- second --}}
-      <a href="#" class="n-double" style="text-decoration: none;">        <i class="fa fa-users n-papper" aria-hidden="true"></i>
-        <span class="n-student-for">Students</span>
-        <i class="fa fa-caret-down n-back-lop" aria-hidden="true"></i>     </a>
-      {{-- end second --}}      {{-- hide --}}
-       <div class="n-forjs" id="hide">
-          <ul>
-            <li>
-              <a href="{{route('department-page')}}">Department</a>
-            </li>
-          </ul>           <ul style="margin-bottom: 0px;">
-            <li>
-              <a href="{{route('section-page')}}" class="n-fomular" style="padding-right: 150px;">Class</a>
-            </li>
-          </ul>
-        </div>
-        {{--end hide --}}
-        </div>
-            {{-- end for students --}}
-    
-    {{-- end for students --}}  
-      {{-- for report --}}  
-        <div class="row n-ruller">
-      <a href="{{route('report')}}" class="n-double" style="text-decoration: none;">
-        
-        <i class="fa fa-file-text n-papper" aria-hidden="true"></i>
-        <span class="n-attendance-for n-report-forfor">Report</span>
-          
-        
-      </a>
-        </div>
-    
-    {{-- end for report --}}
-        {{-- for message --}} 
-          <div class="row n-ruller">
-      <a href="{{route('message')}}" class="n-double" style="text-decoration: none;">
-        
-        <i class="fa fa-commenting n-papper" aria-hidden="true"></i>
-        <span class="n-attendance-for n-message-for">Message</span> 
-      </a>
-          </div>
-    
-    {{-- end for message --}}   
-                
+    				@endforeach
+
+    			</tr>
+    			{{-- first tr --}}
+
+    			{{-- second tr --}}
+    			<tr>
+
+    			</tr>
+
+    			{{-- second tr --}}
+    			
+    			
+
+    		</table>
+    		
+
+    		{{-- end table --}}
+
+    	</div>
     </div>
 
 
-    {{-- end column 3 --}}  
+   
 
-      {{-- column 9 --}}
-    <div class="col-sm-9">
+    {{-- End Attendance List --}}
+    
 
-       <span><a href="{{route('teacher-page')}}">teacher</a></span>
 
-       <span><a href="{{route('subject')}}" class="btn btn-primary">subject</a></span>
-       <span><a href="{{route('student-create')}}" class="btn btn-success">student</a></span>
 
-      {{-- learn and play --}}
-      <div class="n-learn-play">
-        <a href="#" class="n-play" style="text-decoration: none;">
-          Learn & play
-        </a>
-        
-      </div>
-      {{-- end learn and play --}}      {{-- learn and play --}}
-      <div class="n-learn-play n-forstudents-2">
-        <a href="#" class="n-play" style="text-decoration: none;">
-          Forstudents
-        </a>
-        
-      </div>
-      {{-- end learn and play --}}  
 
-          {{-- learn and play --}}
-      <div class="n-learn-play n-leave-out">
-        <a href="#" class="n-play" style="text-decoration: none;">
-          Leave_Out
-        </a>
-        
-      </div>
-      {{-- end learn and play --}}    
-    </div>
 
-    {{-- end column 9 --}}  
-  </div>
-  {{-- end row --}}
-  
-</div>
-{{-- end container-fluid --}}
+
+
+
 
 @endsection
 

@@ -25,6 +25,8 @@ class CreateStudentsTable extends Migration
             $table->foreign('dep_id')->references('id')->on('departments')->onDelete('cascade');
             $table->bigInteger('section_id')->unsigned();
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
+            $table->bigInteger('subject_id')->unsigned();
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
             $table->boolean('breaker')->default('1');
             $table->timestamps();
         });

@@ -98,7 +98,7 @@
 
            {{-- student --}}
            <div class="col-sm-2 n-col-padding">
-            <a href="{{route('student')}}" class="n-link-icon">
+            <a href="{{route('stu_department')}}" class="n-link-icon">
              <i class="fa fa-users" aria-hidden="true"></i>
             </a>
             <h4 class="n-planet">Students</h4>
@@ -131,13 +131,12 @@
 
            {{-- message --}}
             <div class="col-sm-2 h-hrline text-center">
-            <a href="{{route('message')}}" class="n-link-icon">
+            <a href="{{route('leavestudentpage')}}" class="n-link-icon">
               <i class="fa fa-commenting" aria-hidden="true"></i>
             </a>
-            <h4 class="n-planet">Message</h4>
-            <p>“A computer will do what you tell it to do, but that may be much different from what you had in mind.  
-
-”</p>
+            <h4 class="n-planet">Leave_Out</h4>
+            <p>“The man who does not read books has no advantage over the one who cannot read them.”
+            </p>
             {{-- image five --}}
             <div class="h-image">
               <img src="{{'/upload/6.png'}}">
@@ -166,7 +165,7 @@
               {{-- columns-one --}}
               {{-- columns-two --}}
               <div class="col-sm-4" style="padding-top: 115px;">
-                  <a href="#">
+                  <a href="{{route('onlyforstudentpage')}}">
                   <img src="/upload/cicle.png" class="h-circle">
                   </a>
               </div>

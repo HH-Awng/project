@@ -1,9 +1,11 @@
-/*start report*/
+start report*/
 /*all left right*/
 
 html, body{
 	font-family: Nirmala UI;
+	
 }
+
 .report{
 	
 	z-index: 2 !important;
@@ -11,8 +13,10 @@ html, body{
 	padding-left: 305px;
 }
 
-.n-vartical{	padding-bottom: 350px;
+.n-vartical{	
+	padding-bottom: 350px;
 	box-shadow: -4px 0px 9px;
+	height: 600px;
 }
 .n-report-z{
 	
@@ -20,11 +24,28 @@ background-color: #F8FAFC;
 
 width: 74px;
 color: black;
-text-shadow: -2px 0px 5px;}.n-learn-play{
+text-shadow: -2px 0px 5px;
+}
+
+.n-attendancen-n-loop{
+	width: 124px;
+}
+
+.n-learn-play{
 	z-index: 3;
 	margin-top: -32px;
-	padding-left: 760px;}
-.n-play{	box-shadow: -2px 0px 5px;
+	padding-left: 760px;
+}
+.n-second-rullerjs{
+	box-shadow: -1px 0px 3px;
+}
+
+.h-remakepare{
+	margin-top: -69px;
+}
+
+.n-play{
+	box-shadow: -2px 0px 5px;
 	box-decoration-break: 20px;
 	color: black;
 	padding: 10px;
@@ -51,7 +72,8 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 	padding-right: 15px;
 	color: #6A6868
 ;
-}.n-attendance-for{
+}
+.n-attendance-for{
 	font-size: 15px;
 	padding-right: 140px;
 	
@@ -68,15 +90,51 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 .n-student-for{
 	font-size: 15px;
 }
-.n-teacher-for{
-	padding-right: 162px;
+.h-ul-student{
+	background-color: rgba(63,62,62,0.5);
 }
-.n-report-forfor{
-	padding-right: 178px;
+.n-teacher-h{
+	width: 84px;
 }
-.n-message-for{
-	padding-right: 160px;
+.n-teacherper-h{
+	width: 194px;
 }
+.n-teacheredit-h{
+	width: 139px;
+}
+.report{
+	margin-top: -38px;
+	margin-left: -321px;
+}
+.n-attendance-h{
+	width: 127px;
+}
+.n-studentdep-h{
+	width: 233px;
+}
+.n-stu_edit-h{
+	width: 141px;
+}
+.n-studentper-h{
+	width: 196px;
+}
+.n-stuclass-h{
+	width: 159px;
+}
+.n-studperso-h{
+	width: 196px;
+}
+.n-forstude-h{
+	width: 131px;
+}
+
+
+
+
+
+
+
+
 
 
 .n-double{
@@ -90,7 +148,7 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 .n-student-for{
 	font-size: 15px;
 }
-.n-teacher-for{
+/*.n-teacher-for{
 	padding-right: 162px;
 }
 .n-report-forfor{
@@ -98,7 +156,7 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 }
 .n-message-for{
 	padding-right: 160px;
-}
+}*/
 .n-forstudents-icon{
 	font-size: 16px;
 	padding-left: 129px;
@@ -110,7 +168,7 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 ;
 }
 .n-forjs{
-	display: none;
+	
 	padding-top: 20px;}
 .n-forjs a{
 	padding-right: 108px;
@@ -143,7 +201,12 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 }
 /*for hnin javascript*/
 
+/*h-form-row*/
+.h-form-row{
+	padding-top: 40px;
+}
 
+/*h-form-row*/
 
 
 
@@ -168,6 +231,17 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 .h-student{
 	width: 89px;
 }
+.newforcontainer{
+	
+	margin-top: 30px;
+	
+	margin-left: 60px;
+}
+.n-fornameone{
+	font-size: 35px;
+	text-shadow: -1px 0px 5px;
+
+}
 
 /*end students*/
 
@@ -180,6 +254,23 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 	width: 94px;
 
 }
+.n-forsearch{
+	margin-left: 842px;
+}
+.newmessage{
+	margin-top: 20px;
+	text-align: right;
+}
+.n-textcolor{
+	border-radius: 30px 30px 3px 30px;
+	background-color: #01a197;
+	text-align: center;
+	color: white;
+}
+.fafa-naing{
+	font-size: 17px;
+	color: #f56954;
+}
 /*end message*/
 
 
@@ -188,15 +279,172 @@ text-shadow: -2px 0px 5px;}.n-learn-play{
 	width: 90px;
 }
 .n-loop-margin{
-	margin-top: 120px;
+	margin-bottom: 20px;
 	width: 100%;
+	
 }
 
 .img {
   width: 400px;}
 .n-imagemap{
-	width: 100%;
-	height: 315px;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;	
+}
+.none-imagemap{
+
+		width: 47%;
+	height: 100px;
+	border-radius: 50%;	
+}
+.h-loop-value{
+	margin-right: 30px;
+	color:#87918e;
+}
+.n-nameforloop{
+	text-align: initial;
+	margin-left: 417px;
+	margin-bottom: 13px;
+	border-bottom: 1px solid #01a197;
+	width: 271px;
+}
+.n-oneimg{
+	margin-bottom: 30px;
+}
+.a-text-color{
+	margin-left: 41px;
+}
+.b-text-color{
+	margin-left: 55px;
+}
+.c-text-color{
+	margin-left: 47px;
+}
+
+.e-text-color{
+	margin-left: 31px;
+}
+.n-forkeyone{
+	margin-top: 38px;
+}
+.n-primary{
+	box-shadow: -1px 0px 3px black;
+	color: black;
+	padding: 4px 25px;
+	margin-left: 533px;
+}
+.n-primary:hover{
+	color: #01a197;
+}
+
+/*end teacher*/
+
+
+
+/*only for students*/
+.h-forstudents{
+	margin-top: 30px;
+}
+
+.h-studentscolums{
+	margin: 20px;
+	font-size: 20px;
+	padding-top: 50px;
+	text-align: center;
+
+}
+
+.h-forstudentsend{
+	width: 129px;
+}
+
+.h-iconforcheck{
+	font-size: 55px;
+}
+
+.h-reportfil{
+	width: 700px;
+
+}
+.n-paddingfor{
+	padding-top: 50px;
+}
+/*end only for students*/
+
+
+/*student_departmemt*/
+.h-student-department{
+	width: 133px;
+}
+.h_stu_department{
+	margin-left: 70px;
+	margin-top: 5px;
+}
+.n-stu-department{
+	margin-top: 9px;
+}
+.h_stu_department a{
+
+	color: black;
+	font-size: 19px;
+	text-decoration: none;
+	text-shadow: -2px 0px 5px;
+}
+
+.n-guan-firstrow{
+	margin-left: 45px;
+}
+.n-loopimagefirst{
+	width: 100px;
+height: 100px;
+border-radius: 50%;
+}
+/*end student_department*/
+
+
+/*interface class*/
+.h-student-class{
+	width: 53px;
+}
+
+.h-textdecoration{
+	text-shadow: none !important;
+	font-size: .9rem !important;
+}
+
+/*end interface class
+
+
+
+/*Check Box*/
+.h-checkbox{
+	color: red;
+	font-weight: bold;
+	margin-top: 40px;
+}
+.inputcheck{
+	width: 30px;
+}
+
+/*End Check Box*/
+
+
+
+/* Table*/
+.h-td-padd{
+	width: 300px!important;
+	height: 50px!important;
+}
+.h-td-present{
+	width: 100px;
 	
 }
-/*end teacher*/
+
+/*End Table*/
+
+/*Leave_Out*/
+.n-leaveout-h{
+	width: 115px;
+}
+
+/*Leave_out*/

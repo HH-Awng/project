@@ -51,11 +51,11 @@ class TeacherController extends Controller
         'teacherrank'=>'required|string',
         'registerno'=>'required|string',
         'teachgender'=>'required|string',
-        'teachimage'=>'required|image|mimes:jpg,png,jpeg|max:5000'
+        'teachimage'=>'required|image|mimes:jpg,png,jpeg|max:7000'
         
         ]);
 
-             $name= $request->teachername;
+            $name= $request->teachername;
             $age = $request->teacherage;
             $rank = $request->teacherrank;
             $reg = $request->registerno;
@@ -71,9 +71,7 @@ class TeacherController extends Controller
             $image->move($path, $photo);
             
 
-            }       
- 
-           
+            }         
         
 
          $teacher= new Teacher;
@@ -127,9 +125,8 @@ class TeacherController extends Controller
             'teacherage'=>'required|max:20|min:2',
             'teacherrank'=>'required|string',
             'registerno'=>'required|string',
-            'teachgender'=>'required|string',
-           
-            'teachimage'=>'nullable|image|mimes:jpg,png,jpeg|max:5000',
+            'teachgender'=>'required|string',          
+            'teachimage'=>'nullable|image|mimes:jpg,png,jpeg|max:7000',
         ]);
         
 
@@ -215,6 +212,11 @@ if ($teachers->delete()){
 
 
 }
+
+
+
+
+
 
 
 

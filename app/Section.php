@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     public function subjects(){
-    	return $this->hasMany('App\Subject')->withDefault();
+    	return $this->hasMany('App\Subject');
 	}
 
 	public function students(){
-		return $this->hasManh('App\Student')->withDefault();
+		return $this->hasMany('App\Student');
+	}
+
+
+	public function teacher(){
+		return $this->belongsTo('App\Teacher');
 	}
 
 }

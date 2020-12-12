@@ -12,7 +12,7 @@
 			{{-- columns --}}
 			<div class="col-md-8">
 
-				<a href="{{route('attendance')}}" class="btn btn-primary">Back</a>
+			
 
 				{{-- card --}}
 				<div class="card">

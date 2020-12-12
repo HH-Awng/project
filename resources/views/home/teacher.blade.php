@@ -2,192 +2,110 @@
 @extends('layouts.app')
 @section('title', 'Teacher Page')
 @section('content') 
-  {{-- container-fluid --}}
-<div class="container-fluid" style="margin-top: 45px; border-top: 1px solid black;">
-  {{-- row --}}
-  <div class="row">
-    {{-- column 3 --}}
-    <div class="col-sm-2 n-vartical">
-    {{-- report --}}
+   
+
+
+  {{-- report --}}
     <div class="report">  
-      <h3 class="n-report-z h-teacher">Teachers</h3>
+      <h3 class="n-report-z n-teacher-h">Teacher</h3>
       
     </div>
     {{-- end report --}}
-      {{-- for attendance --}}
-    <div class="row n-ruller">
-      <a href="{{route('attendance')}}" class="n-double" style="text-decoration: none;">
-        
-        <i class="fa fa-bar-chart n-papper" aria-hidden="true"></i>
-                <span class="n-attendance-for">Attendance</span>
-          
-        
-      </a>
-          </div>
-    {{-- end for attendance --}}  
-
-
-    {{-- for teachers --}}  
-        <div class="row n-ruller">
-      <a href="{{route('teacher')}}" class="n-double" style="text-decoration: none;">
-        <i class="fa fa-suitcase n-papper" aria-hidden="true"></i>
-        
-      <span class="n-attendance-for n-teacher-for">Teachers</span>  
-      </a>
-        </div>
-    
-    {{-- end for teachers --}}  
-
-      {{-- for teachers --}}  
-
-        {{-- for students --}}    
-      {{-- for students --}}
-      <div class="row n-ruller n-second-rullerjs" id="show">
-     {{-- second --}}
-      <a href="#" class="n-double" style="text-decoration: none;">  
-            <i class="fa fa-users n-papper" aria-hidden="true"></i>
-        <span class="n-student-for">Students</span>
-        <i class="fa fa-caret-down n-back-lop" aria-hidden="true"></i> 
-            </a>
-      {{-- end second --}} 
-           {{-- hide --}}
-       <div class="n-forjs" id="hide">
-          <ul>
-            <li>
-              <a href="{{route('department-page')}}">Department</a>
-            </li>
-          </ul> 
-               <ul style="margin-bottom: 0px;">
-            <li>
-              <a href="{{route('section-page')}}" class="n-fomular" style="padding-right: 150px;">Class</a>
-            </li>
-          </ul>
-        </div>
-        {{--end hide --}}
-        </div>
-            {{-- end for students --}}
-    
-    {{-- end for teachers --}}  
-
-     
-      {{-- for report --}}  
-        <div class="row n-ruller">
-      <a href="{{route('report')}}" class="n-double" style="text-decoration: none;">
-        
-        <i class="fa fa-file-text n-papper" aria-hidden="true"></i>
-        <span class="n-attendance-for n-report-forfor">Report</span>
-          
-        
-      </a>
-        </div>
-    
-    {{-- end for report --}}
-        {{-- for message --}} 
-          <div class="row n-ruller">
-      <a href="{{route('message')}}" class="n-double" style="text-decoration: none;">
-        
-        <i class="fa fa-commenting n-papper" aria-hidden="true"></i>
-        <span class="n-attendance-for n-message-for">Message</span> 
-      </a>
-          </div>
-    
-    {{-- end for message --}}   
-                
-    </div>
-
-
-    {{-- end column 3 --}}  
-
-      {{-- column 9 --}}
-    <div class="col-sm-9">
-      {{-- learn and play --}}
-      <div class="n-learn-play">
-        <a href="#" class="n-play" style="text-decoration: none;">
-          Learn & play
-        </a>
-        
-      </div>
-      {{-- end learn and play --}}      {{-- learn and play --}}
-      <div class="n-learn-play n-forstudents-2">
-        <a href="#" class="n-play" style="text-decoration: none;">
-          Forstudents
-        </a>
-        
-      </div>
-      {{-- end learn and play --}}  
-
-          {{-- learn and play --}}
-      <div class="n-learn-play n-leave-out">
-        <a href="#" class="n-play" style="text-decoration: none;">
-          Leave_Out
-        </a>
-        
-      </div>
-      {{-- end learn and play --}}  
-
-
-
 
 
           {{-- UI design --}}
-          <div class="container">
+          <div class="container newforcontainer">
 
 
 
-             @foreach($subjects as $key=>$subject)
-            {{-- row --}}
-            <div class="row">
-              {{-- col-sm-3 --}}
-              <div class="col-sm-3 n-loop-margin">
-                  
-         
-                  
             
-               {{--  <td>{{++$key}}</td>
-                <td>{{$subject->subname}}</td>
-                <td>{{$subject->created_at}}</td>
-                <td>{{$subject->teacher->name}}</td>
-                <td>{{$subject->section->class_name}}</td> --}}
+            {{-- row --}}
+            <div class="row" style="text-align: center;">
 
 
-             {{--  for image --}}
-             <div class="n-for_imageloop">
-               <img src="{{asset('/storage/imagestore/'.$subject->teacher->image)}}" class="n-imagemap border border-ligh">
-             </div>
-              
-             {{--  end for image --}}
-                  
-
-
-          
-          
+               
 
 
 
+
+  <table class="table">
+  
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Image</th>
+      
+      <th scope="col">Name</th>
+      <th scope="col">Register_NO</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+   @foreach($subjects as $key=>$subject)
+  <tbody>
+    <tr>
+      <th scope="row"><p class="n-forkeyone">{{++$key}}.</p></th>
+      <td>
+            
+            <div>
+                  <img src="{{asset('/storage/imagestore/'.$subject->teacher->image)}}" class="none-imagemap border border-ligh">
               </div>
-              {{-- col-sm-3 --}}
+
+      </td>
+
+
+      
+       <td>
+             <p class="n-forkeyone">{{$subject->teacher->name}}</p>
+      </td>
 
 
 
-              {{-- col-sm-9 --}}
-                <div class="col-sm-9">
-                  <tbody>
-                    <tr>
-                      <td>{{$subject->teacher->name}}</td>
-                    </tr>
-                  </tbody>
-                </div>
+        <td>
 
-              {{-- end col-sm-9 --}}
+           <p class="n-forkeyone">{{$subject->teacher->Reg_No}}</p>
+        
+        </td>
 
 
+      <td>
+            
+            <!-- Example single danger button -->
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger dropdown-toggle n-forkeyone" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #01a197; border-color: #01a197">
+                Action
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{route('teacher_edit',  $subject->teacher_id)}}">Edit</a>
+                <a class="dropdown-item" href="{{route('teacher-delete',  $subject->teacher_id)}}"
+                  onclick="return confirm('Are you sure to delete?')">Delete</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{route('one_teacher', $subject->teacher_id)}}">Personal data</a>
+              </div>
+            </div>
+            <!-- Example single danger button -->
+
+      </td>
+    </tr>
+   
+  </tbody>
+
+  @endforeach
+
+</table>
+ {{$subjects->links()}}
+              
+
+             
 
 
 
 
             </div>
             {{-- end row --}}
-            @endforeach
+            
 
 
 
@@ -200,22 +118,6 @@
 
 
 
-
-
-
-
-
-
-
-
-    </div>
-
-    {{-- end column 9 --}}  
-  </div>
-  {{-- end row --}}
-  
-</div>
-{{-- end container-fluid --}}
 
 @endsection
 
